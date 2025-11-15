@@ -1,10 +1,10 @@
-api: apps/v1
-kind: deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: synergychat-api
-  lables:
+  labels:
     app: synergychat-api
-specs:
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ specs:
     metadata:
       labels:
         app: synergychat-api
-    specs:
+    spec:
       containers:
        - name: synergychat-api
          image: bootdotdev/synergychat-api:latest
